@@ -38,7 +38,14 @@ except Exception as e:
 # -----------------------------
 # Prepare features & target
 # -----------------------------
-X = data.drop(columns=["cnt", "dteday"], errors="ignore")
+# Feature engineering (MUST match training)
+data["dteday"] = pd.to_datetime(data["dteday"])
+data["month"] = data["dteday"].dt.month
+data["dayofweek"] = data["dteday"].dt.dayofweek
+data["year"] = data["dteday"].dt.year
+
+# Prepare features and target
+X = data.drop(columns=["cnt", "dteday"])
 y = data["cnt"]
 
 # -----------------------------
