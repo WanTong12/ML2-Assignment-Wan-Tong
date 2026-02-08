@@ -45,7 +45,23 @@ data["dayofweek"] = data["dteday"].dt.dayofweek
 data["year"] = data["dteday"].dt.year
 
 # Prepare features and target
-X = data.drop(columns=["cnt", "dteday"])
+FEATURE_ORDER = [
+    "season",
+    "mnth",
+    "holiday",
+    "weekday",
+    "workingday",
+    "weathersit",
+    "temp",
+    "atemp",
+    "hum",
+    "windspeed",
+    "month",
+    "dayofweek",
+    "year"
+]
+
+X = data[FEATURE_ORDER]
 y = data["cnt"]
 
 # -----------------------------
