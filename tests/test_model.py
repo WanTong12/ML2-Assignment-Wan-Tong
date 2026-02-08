@@ -39,7 +39,7 @@ except Exception as e:
 # Prepare features & target
 # -----------------------------
 # Feature engineering (MUST match training)
-data["dteday"] = pd.to_datetime(data["dteday"])
+data["dteday"] = pd.to_datetime(data["dteday"], dayfirst=True)
 data["month"] = data["dteday"].dt.month
 data["dayofweek"] = data["dteday"].dt.dayofweek
 data["year"] = data["dteday"].dt.year
