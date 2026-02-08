@@ -7,7 +7,7 @@ from sklearn.metrics import mean_squared_error
 # -----------------------------
 # Configuration
 # -----------------------------
-MODEL_PATH = "model/best_model.joblib"
+MODEL_PATH = "model/Improved_model.joblib"
 DATA_PATH = "data/day_2011.csv"
 
 # Baseline RMSE from Task 1 (Linear Regression)
